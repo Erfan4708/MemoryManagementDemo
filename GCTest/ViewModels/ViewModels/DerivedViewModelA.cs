@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GCTest
+﻿namespace GCTest.ViewModels.ViewModels
 {
     public class DerivedViewModelA : BaseViewModel
     {
+        #region Variables
         private bool _disposed = false;
         private int[] _additionalResourcesA;
+        #endregion
 
+        #region Constructors
         public DerivedViewModelA()
         {
             _additionalResourcesA = new int[1000000]; // Allocate some additional resources
         }
+        #endregion
 
+        #region Methods
         protected override void Dispose(bool disposing)
         {
             if (_disposed)
@@ -36,7 +35,8 @@ namespace GCTest
 
             // Call the base class implementation
             base.Dispose(disposing);
-        }
+        } 
+        #endregion
     }
 
 }

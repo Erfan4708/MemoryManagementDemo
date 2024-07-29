@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+
+using GCTest.ViewModels.ViewModels;
 
 namespace GCTest
 {
     class Program
     {
-        // Function to display memory usage
-        static void DisplayMemory(string message)
-        {
-            Console.WriteLine($"{message}: {GC.GetTotalMemory(true) / (1024 * 1024)} MB");
-            Console.WriteLine();
-        }
         static void Main()
         {
             Task.Delay(2000).Wait();    
@@ -43,6 +35,12 @@ namespace GCTest
 
             Console.ReadLine();
         }
-    }
 
+        // Function to display memory usage
+        static void DisplayMemory(string message)
+        {
+            Console.WriteLine($"{message}: {GC.GetTotalMemory(true) / (1024 * 1024)} MB");
+            Console.WriteLine();
+        }
+    }
 }

@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseViewModel.cs" />
-    <Compile Include="DerivedViewModelA.cs" />
-    <Compile Include="DerivedViewModelB.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ViewModels\DerivedViewModelA.cs" />
+    <Compile Include="ViewModels\ViewModels\DerivedViewModelB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -23,16 +23,6 @@ The `Program` class in the `Main` method demonstrates the following:
 3. Manually disposing of the objects to release memory.
 4. Displaying memory usage after disposal.
 
-## Screenshots
-
-### Memory Usage Before and After Disposal
-
-![Memory Usage](https://github.com/Erfan4708/MemoryManagementDemo/blob/master/Resources/memory_usage.png)
-
-### Memory Usage Graph
-
-![Memory Usage Graph](https://github.com/Erfan4708/MemoryManagementDemo/blob/master/Resources/memory_usage_graph.png)
-
 
 ## Code Example
 
@@ -50,26 +40,26 @@ namespace GCTest
         {
             Task.Delay(2000).Wait();    
 
-            DisplayMemory("Memory usage before allocating large array");
+            DisplayMemory("#1) Memory usage before allocating large array");
 
             DerivedViewModelA viewModelAWithoutUsing = new DerivedViewModelA();
             viewModelAWithoutUsing.AllocateLargeArray(100); // 100 MB
-            DisplayMemory("Memory usage for DerivedViewModelA");
+            DisplayMemory("#2) Memory usage for DerivedViewModelA");
             Task.Delay(2000).Wait();
 
             // Manually disposing DerivedViewModelA
             viewModelAWithoutUsing.Dispose();
-            DisplayMemory("Memory usage after manual dispose for DerivedViewModelA");
+            DisplayMemory("#3) Memory usage after manual dispose for DerivedViewModelA");
             Task.Delay(2000).Wait();
 
             DerivedViewModelB viewModelBWithoutUsing = new DerivedViewModelB();
             viewModelBWithoutUsing.AllocateLargeArray(50); // 50 MB
-            DisplayMemory("Memory usage for DerivedViewModelB");
+            DisplayMemory("#4) Memory usage for DerivedViewModelB");
             Task.Delay(2000).Wait();
 
             // Manually disposing DerivedViewModelB
             viewModelBWithoutUsing.Dispose();
-            DisplayMemory("Memory usage after manual dispose for DerivedViewModelB");
+            DisplayMemory("#5) Memory usage after manual dispose for DerivedViewModelB");
             Task.Delay(2000).Wait();
 
             Console.ReadLine();
@@ -83,7 +73,20 @@ namespace GCTest
         }
     }
 }
+
 ```
+
+## Screenshots
+
+### Memory Usage Before and After Disposal
+
+![Memory Usage](https://github.com/Erfan4708/MemoryManagementDemo/blob/master/Resources/memory_usage.png)
+
+### Memory Usage Graph
+
+![Memory Usage Graph](https://github.com/Erfan4708/MemoryManagementDemo/blob/master/Resources/memory_usage_graph.png)
+
+
 
 ## Conclusion
 This project illustrates the importance of proper resource management in C#. By implementing the IDisposable interface and ensuring that resources are disposed of correctly, we can prevent memory leaks and improve the performance of our applications.
